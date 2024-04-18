@@ -12,7 +12,10 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class Producer {
     public static void main(String[] args) {
-        String queueName = args[0];
+        String queueName = "demo";
+        if (args.length > 0) {
+            queueName = args[0];
+        }
         if (queueName == null)
             queueName = "demo";
         ConnectionFactory factory = new ActiveMQConnectionFactory(
